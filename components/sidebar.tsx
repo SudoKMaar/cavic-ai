@@ -30,10 +30,10 @@ const routes = [
     color: "text-violet-500",
   },
   {
-    label: "Image Generation",
-    icon: ImageIcon,
-    color: "text-pink-700",
-    href: "/image",
+    label: "Audio Generation",
+    icon: Music,
+    color: "text-emerald-500",
+    href: "/audio",
   },
   {
     label: "Video Generation",
@@ -42,10 +42,10 @@ const routes = [
     href: "/video",
   },
   {
-    label: "Music Generation",
-    icon: Music,
-    color: "text-emerald-500",
-    href: "/music",
+    label: "Image Generation",
+    icon: ImageIcon,
+    color: "text-pink-700",
+    href: "/image",
   },
   {
     label: "Code Generation",
@@ -66,7 +66,7 @@ export const Sidebar = () => {
     <div className="space-y-4 py-4 flex flex-col h-full dark:bg-[#2B2D31] bg-[#F2F3F5] text-black dark:text-white">
       <div className="px-3 py-2 flex-1">
         <Link href="/dashboard" className="flex items-center pl-3 mb-10">
-          <div className="relative h-[59px] w-[242px] mr-4">
+          <div className="relative h-[77px] w-[234px] mr-4">
             <Image fill alt="CAVIC AI Logo" src="/logo.png" />
           </div>
           {/* <h1 className={cn("text-2xl font-bold", poppins.className)}>

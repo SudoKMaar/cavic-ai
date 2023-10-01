@@ -6,7 +6,7 @@ const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="light"
       enableSystem
       storageKey="cavic-theme"
     >
