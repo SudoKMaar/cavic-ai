@@ -12,6 +12,11 @@ import formSchema from "./constants";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Empty from "@/components/empty";
+import Loader from "@/components/loader";
+import { cn } from "@/lib/utils";
+import UserAvatar from "@/components/user-avatar";
+import BotAvatar from "@/components/bot-avatar";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -43,7 +48,7 @@ const ConversationPage = () => {
     }
   };
   return (
-    <div>
+    <div className="bg-white dark:bg-zinc-900">
       <Heading
         title="Conversation"
         description="Our most advanced conversation modal"
@@ -83,9 +88,28 @@ const ConversationPage = () => {
           </Form>
         </div>
         <div className="space-y-4 mt-4">
+          {isLoading && (
+            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+              <Loader />
+            </div>
+          )}
+          {messages.length === 0 && !isLoading && (
+            <Empty label="No conversation started" />
+          )}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message) => (
-              <div key={message.content}>{message.content}</div>
+              <div
+                key={message.content}
+                className={cn(
+                  "p-4 w-full flex items-start gap-x-6 rounded-lg",
+                  message.role === "user"
+                    ? "bg-white dark:bg-zinc-900 border border-black/10 dark:border-zinc-800"
+                    : "bg-muted"
+                )}
+              >
+                {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+                <p className="text-sm">{message.content}</p>
+              </div>
             ))}
           </div>
         </div>

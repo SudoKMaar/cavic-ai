@@ -67,7 +67,7 @@ export const Sidebar = () => {
       <div className="px-3 py-2 flex-1">
         <Link href="/dashboard" className="flex items-center pl-3 mb-10">
           <div className="relative h-[77px] w-[234px] mr-4">
-            <Image fill alt="CAVIC AI Logo" src="/logo.png" />
+            <Image fill alt="CAVIC AI" src="/logo.png" />
           </div>
           {/* <h1 className={cn("text-2xl font-bold", poppins.className)}>
             CAVIC AI
