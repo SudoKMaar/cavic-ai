@@ -10,7 +10,10 @@ const Navbar = () => {
         <span className="px-2">
           <ModeToggle />
         </span>
-        <UserButton afterSignOutUrl="/" />
+        <UserButton
+          afterSignOutUrl="/"
+          appearance={{ elements: { avatarBox: "h-10 w-10" } }}
+        />
       </div>
     </div>
   );
