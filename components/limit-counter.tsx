@@ -8,8 +8,10 @@ import { useProModal } from "@/hooks/use-pro-modal";
 const MAX_FREE_COUNTS = 10;
 export const LimitCounter = ({
   apiLimitCount = 0,
+  isPro = false,
 }: {
   apiLimitCount: number;
+  isPro: boolean;
 }) => {
   const proModal = useProModal();
   const [mounted, setMounted] = useState(false);
@@ -17,6 +19,9 @@ export const LimitCounter = ({
     setMounted(true);
   }, []);
   if (!mounted) {
+    return null;
+  }
+  if (isPro) {
     return null;
   }
   return (
