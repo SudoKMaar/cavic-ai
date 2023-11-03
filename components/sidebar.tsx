@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { LimitCounter } from "./limit-counter";
 
 const poppins = Montserrat({ weight: "600", subsets: ["latin"] });
 
@@ -59,8 +60,10 @@ const routes = [
     href: "/settings",
   },
 ];
-
-export const Sidebar = () => {
+interface SidebarProps {
+  apiLimitCount: number;
+}
+export const Sidebar = ({ apiLimitCount = 0 }: SidebarProps) => {
   const pathname = usePathname();
   return (
     <div className="space-y-4 py-4 flex flex-col h-full dark:bg-[#2B2D31] bg-[#F2F3F5] text-black dark:text-white">
@@ -93,6 +96,7 @@ export const Sidebar = () => {
           ))}
         </div>
       </div>
+      <LimitCounter apiLimitCount={apiLimitCount} />
     </div>
   );
 };
