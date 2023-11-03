@@ -13,7 +13,7 @@ const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
       storageKey="cavic-theme"
     >
       <div className="h-full relative">
-        <div className="hidden h-full md:flex md:w-72 md:flex-col md:fixed md-inset-y-0 z-[80] dark:bg-[#2B2D31] bg-[#F2F3F5]">
+        <div className="hidden h-full md:flex md:w-72 md:flex-col md:fixed md-inset-y-0 dark:bg-[#2B2D31] bg-[#F2F3F5]">
           <Sidebar apiLimitCount={apiLimitCount} />
         </div>
         <main className="h-full md:pl-72 bg-white dark:bg-zinc-900">
